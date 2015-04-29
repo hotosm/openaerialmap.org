@@ -1,0 +1,10 @@
+# System files
+.project
+.DS_Store
+.sass-cache
+.tmp
+
+# Local
+.resources
+.bundle
+bundle
