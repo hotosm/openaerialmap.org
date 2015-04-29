@@ -1,0 +1,49 @@
+// HEADINGS
+
+h1, .hd-xl,
+h2, .hd-l,
+h3, .hd-m,
+h4, .hd-s,
+h5, .hd-xs,
+h6, .hd-xxs {
+  font-family: $base-font-family;
+  font-weight: $base-font-bold;
+  margin: 0 0 1rem 0;
+  @include media(medium-up) {
+    margin: 0 0 1.25rem 0;
+  }
+}
+
+.hd-hyper {
+  @include heading(2.25rem, xlarge-up);   // 44, 48, 52, 56
+}
+
+.hd-xl {
+  @include heading(1.75rem, xlarge-up);   // 28, 32, 36, 40
+}
+
+.hd-l {
+  @include heading(1.5rem, xlarge-up);    // 24, 28, 32, 36
+}
+
+.hd-m {
+  @include heading(1.25rem, xlarge-up);   // 20, 24, 28, 32
+}
+
+.hd-s, .hd-xs, .hd-xxs {
+  @include heading(1rem, xlarge-up);      // 16, 20, 24, 28
+}
+
+.prose {
+  p, ul, ol, dl {
+    margin-bottom: 1rem;
+  }
+
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
