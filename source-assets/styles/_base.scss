@@ -78,8 +78,8 @@ a:active{
 
 #site-header {
   position: relative;
-  padding: 6rem 0 4rem 0;
-  @include background(linear-gradient(rgba($base-color, 0.48), rgba($base-color, 0.64), rgba($base-color, 0.80)), url("/assets/graphics/layout/hero-image.jpg") center top no-repeat);
+  padding: 4rem 0;
+  @include background(linear-gradient(rgba($base-color, 0.48), rgba($base-color, 0.64), rgba($base-color, 0.80)), url("../graphics/layout/hero-image.jpg") center top no-repeat);
   background-size: cover;
   color: #fff;
   text-align: center;
