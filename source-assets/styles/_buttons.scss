@@ -61,14 +61,30 @@ input[type=submit] {
 
 // Base Light
 .bttn-base-light,
-.bttn-base-light:visited,
-.bttn-base-light:hover {
+.bttn-base-light:visited {
   @include bttn-variation(#fff);
   color: $base-font-color;
 }
 
-.zc-hover {
-  background-color: shade(#fff, 8%);
+// Base Dark
+.bttn-base-dark,
+.bttn-base-dark:visited {
+  @include bttn-variation($base-font-color);
+  color: #fff;
+}
+
+// Primary
+.bttn-primary,
+.bttn-primary:visited {
+  @include bttn-variation($primary-color);
+  color: #fff;
+}
+
+// Secondary
+.bttn-secondary,
+.bttn-secondary:visited {
+  @include bttn-variation($secondary-color);
+  color: #fff;
 }
 
 // SIZES
@@ -213,59 +229,4 @@ input[type=submit] {
   > .bttn:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
-}
-
-
-// EXTENDS
-
-.bttn-search {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .search;
-}
-
-.bttn-search-welcome {
-  @extend .bttn, .bttn-base-light, .bttn-l, .bttn-notxt, .search;
-}
-
-.bttn-latest-welcome {
-  @extend .bttn, .bttn-base-light, .bttn-l, .history;
-}
-
-.bttn-settings {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .settings;
-}
-
-.bttn-info {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .info;
-}
-
-.bttn-upload {
-  @extend .bttn, .bttn-base-light, .bttn-m, .download;
-  &:before {
-    transform: scaleY(-1);
-    display: inline-block;
-  }
-}
-
-.zoom-controls {
-  @extend .bttn-group-vertical;
-}
-
-.bttn-zoomin {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .plus;
-}
-
-.bttn-zoomout {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .minus;
-}
-
-.bttn-download {
-  @extend .bttn, .bttn-base-light, .bttn-m, .download;
-}
-
-.bttn-clipboard {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .clipboard;
-}
-
-.bttn-uoptions {
-  @extend .bttn, .bttn-base-light, .bttn-m, .bttn-notxt, .uoptions;
 }
