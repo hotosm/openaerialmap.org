@@ -1,7 +1,7 @@
 // TYPE
 // Headings
 
-@mixin heading($font-size, $max-media: xlarge-up) {
+@mixin heading($font-size, $max-media: small-up) {
   font-size: $font-size;
   line-height: $font-size + 0.5;
 
@@ -29,6 +29,25 @@
     }
   }
 }
+
+
+// BUTTONS
+// Variations
+
+@mixin bttn-variation($color) {
+  background-color: $color;
+  &:hover {
+    background-color: shade($color, 8%);
+  }
+  .open > &,
+  .chosen-with-drop > &,
+  &.active,
+  &.active:hover,
+  &:active {
+    background-color: shade($color, 16%);
+  }
+}
+
 
 // MEDIA QUERIES
 
