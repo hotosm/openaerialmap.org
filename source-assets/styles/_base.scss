@@ -89,13 +89,16 @@ a:active{
 // SITE-HEADER
 
 #site-header {
+  @include transform(translateZ(0));
+  @include background(linear-gradient(rgba($base-color, 0.64), rgba($base-color, 0.80), rgba($base-color, 0.92)), url("../graphics/layout/oam-logo-symbol.svg") center center no-repeat);
+  @include animation(splash-bg 3.2s ease 0s 1);
+  @extend .antialiased;
+  background-size: 400% 400%;
   position: relative;
   padding: 4rem 0;
-  @include background(linear-gradient(rgba($base-color, 0.48), rgba($base-color, 0.64), rgba($base-color, 0.80)), url("../graphics/layout/hero-image.jpg") center top no-repeat);
-  background-size: cover;
   color: #fff;
   text-align: center;
-  @extend .antialiased;
+  
   margin-bottom: 2rem;
   min-height: 16rem;
   .inner {
@@ -110,27 +113,48 @@ a:active{
   }
   @include media(medium-up) {
     margin-bottom: 3rem;
-    min-height: 24rem;
+    min-height: 20rem;
     .cta-wrapper {
       margin-top: 3rem;
     }
   }
   @include media(large-up) {
     margin-bottom: 4rem;
-    min-height: 28rem;
+    min-height: 24rem;
   }
 }
 
 .site-title {
-  @include heading(2.25rem, xlarge-up);   // 44, 48, 52, 56
-  margin-bottom: 0;
+  display: inline-block;
+  img {
+    width: auto;
+    height: 2rem;
+  }
+  span {
+    @extend .visually-hidden;
+  }
+  @include media(medium-up) {
+    img {
+      height: 3rem;
+    }
+  }
+  @include media(large-up) {
+    img {
+      height: 4rem;
+    }
+  }
 }
 
 .site-description {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin-top: 0.25rem;
-  font-weight: $base-font-regular;
+  opacity: 0.8;
+  @include media(medium-up) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  @include media(large-up) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 .site-note {
@@ -183,5 +207,16 @@ a:active{
   }
   @include media(large-up) {
     margin-top: 4rem;
+  }
+}
+
+// ANIMATION
+
+@include keyframes(splash-bg) {
+  from {
+    background-size: 800% 800%;
+  }
+  to {
+    background-size: 400% 400%;
   }
 }
