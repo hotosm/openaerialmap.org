@@ -1,7 +1,11 @@
 // GLOBAL
 
-*, *:before, *:after {
-  @include box-sizing(border-box);
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after, input[type="search"] {
+  box-sizing: inherit;
 }
 
 html, body {
@@ -19,18 +23,19 @@ body {
   min-width: $row-min-width;
 }
 
+
 // Links
 
 a {
   cursor: pointer;
-  color: $base-color;
-  text-decoration: underline;
-  @include transform(translate3d(0, 0, 0));
+  color: $primary-color;
+  text-decoration: none;
   @include transition(opacity 0.2s ease 0s);
+  @include transform(translateZ(0));
 }
 
 a:visited {
-  color: $base-color;
+  color: $primary-color;
 }
 
 a:hover {
@@ -41,28 +46,6 @@ a:hover {
 a:active{
   outline: none;
   @include transform(translate(0, 1px));
-}
-
-.bttn-cta {
-  display: inline-block;
-  border-radius: $global-radius;
-  font-weight: $base-font-bold;
-  min-width: 10rem;
-  padding: 0.25rem 1rem;
-  border: 2px solid;
-  text-decoration: none;
-  &.light {
-    color: #fff;
-    border-color: #fff;
-    background: rgba(#fff, 0.08);
-  }
-  &.dark {
-    border-color: $base-color;
-    color: $base-color;
-  }
-  &.large {
-    padding: 0.5rem 1.5rem;
-  }
 }
 
 // Rows
@@ -90,62 +73,135 @@ a:active{
 
 #site-header {
   position: relative;
-  padding: 4rem 0;
-  @include background(linear-gradient(rgba($base-color, 0.48), rgba($base-color, 0.64), rgba($base-color, 0.80)), url("../graphics/layout/hero-image.jpg") center top no-repeat);
-  background-size: cover;
+  @include transform(translateZ(0));
+  @include background(linear-gradient(rgba($base-color, 0.64), rgba($base-color, 0.80), rgba($base-color, 0.92)), url("../graphics/layout/oam-logo-symbol.svg") center center no-repeat);
+  @include animation(splash-bg 3.2s ease 0s 1);
+  @extend .antialiased;
+  background-size: 400% 400%;
+  position: relative;
+  padding: 2rem 0 3rem 0;
   color: #fff;
   text-align: center;
-  @extend .antialiased;
   margin-bottom: 2rem;
-  min-height: 16rem;
+
   .inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     @extend .row;
-    @include transform(translate(-50%, -50%));
   }
-  .cta-wrapper {
-    margin-top: 2rem;
-  }
+
   @include media(medium-up) {
     margin-bottom: 3rem;
-    min-height: 24rem;
-    .cta-wrapper {
-      margin-top: 3rem;
-    }
+    padding: 3rem 0 4rem 0;
   }
+
   @include media(large-up) {
     margin-bottom: 4rem;
-    min-height: 28rem;
+    padding: 4rem 0 5rem 0;
+  }
+}
+
+.site-headline {
+  > *:last-child {
+    margin-bottom: 0;
   }
 }
 
 .site-title {
-  @extend .hd-hyper;
-  margin-bottom: 0;
+  display: inline-block;
+  img {
+    width: auto;
+    height: 2.5rem;
+  }
+  span {
+    @extend .visually-hidden;
+  }
+  @include media(medium-up) {
+    img {
+      height: 3rem;
+    }
+  }
+  @include media(large-up) {
+    img {
+      height: 4rem;
+    }
+  }
 }
 
 .site-description {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  margin-top: 0.25rem;
-  font-weight: $base-font-regular;
+  opacity: 0.8;
+  @include media(medium-up) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  @include media(large-up) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
-.site-note {
-  display: inline-block;
-  border-radius: $global-radius;
-  padding: 0.25rem 0.5rem;
-  text-transform: uppercase;
-  background: rgba($base-color, 0.80);
-  font-weight: $base-font-regular;
+.cta-wrapper {
+  margin-top: 1.5rem;
+
+  i {
+    margin: 0.25rem 0.5rem;
+    opacity: 0.8;
+    font-style: normal;
+    display: inline-block;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .bttn-browse {
+    @extend .bttn, .bttn-base-light, .bttn-m;
+    &:before {
+      @extend .icon-location-marker;
+    }
+  }
+
+  .bttn-upload {
+    @extend .bttn, .bttn-base-light, .bttn-m;
+    &:before {
+      @extend .icon-download;
+      transform: scaleY(-1);
+      display: inline-block;
+    }
+  }
+
+  .cta-note {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(medium-up) {
+    margin-top: 2rem;
+
+    [class^="bttn-"] {
+      min-width: 10rem;
+      line-height: 1.5rem;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .cta-note {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  @include media(large-up) {
+    margin-top: 2.5rem;
+  }
 }
+
 
 // SITE-BODY
 
 #site-body {
-  text-align: center;
   .inner {
     @extend .row;
   }
@@ -157,6 +213,9 @@ a:active{
   > h2 {
     @include heading(1.25rem, medium-up); // 20, 24
   }
+  &:last-child {
+    margin-bottom: 0;
+  }
   @include media(medium-up) {
     @include col(4/12, $cycle: 3);
     margin-bottom: 0;
@@ -167,14 +226,12 @@ a:active{
 
 #site-footer {
   text-align: center;
-  padding: 0 0 2rem 0;
+  padding: 2rem 0;
   margin-top: 2rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: tint($base-color, 32%);
-  a, a:visited {
-    color: tint($base-color, 32%);
-  }
+  box-shadow: inset 0 1px 0 0 $brdr-rgba;
   .inner {
     @extend .row;
   }
@@ -183,5 +240,16 @@ a:active{
   }
   @include media(large-up) {
     margin-top: 4rem;
+  }
+}
+
+// ANIMATION
+
+@include keyframes(splash-bg) {
+  from {
+    background-size: 800% 800%;
+  }
+  to {
+    background-size: 400% 400%;
   }
 }
