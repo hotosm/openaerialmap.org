@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+/* Libraries
+   ========================================================================== */
+
+/**
+ * Bourbon for extended SASS functionality:
+ * http://bourbon.io/
+ */
+
+@import "bourbon";
+
+/**
+ * Jeet, a grid system designed for humans:
+ * http://jeet.gs/
+ */
+
+@import "jeet/jeet";
+
+/**
+ * OpenAerialMap Design System
+ */
+
+// @import "oam-design-system"; <---------------------------------- Enable
+
+
+/* Custom
+   ========================================================================== */
+
+
+
+// vvvv Old styles
+// Delete and start using the oam-design-system
+
+// Reset and normalize
+@import "normalize";
+@import "reset";
+@import "normalize-opentype";
+
+// Settings
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Custom styles
+@import "skins";
+@import "type";
+@import "buttons";
+@import "overlays";
+@import "icons";
+@import "base";
+@import "helpers";
+
+// ^^^^ Old styles
