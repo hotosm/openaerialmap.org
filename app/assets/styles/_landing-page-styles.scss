@@ -1,0 +1,211 @@
+/* WIP - This will be cleaned up better following initial development */
+
+.launcher__item{
+	margin-top:1em;
+	figure{
+	width:100%;
+	height:200px;
+	}
+}
+
+.community__text{
+	text-align: center;
+	width: 100%;
+}
+
+.hero-container{
+	background: red;
+}
+
+.section__header{
+	background-image: url("/assets/graphics/meta/example.png");
+	&:before{
+		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+	}
+}
+
+.blur-media{
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+  background-image: url('http://hotosm-oam.s3.amazonaws.com/uploads/2016-05-16/573a17d4cd0663bb003c32b6/scene/0/scene-0-image-0-0B5OqSBHBRDanMk42OGx6TE9BZlk.thumb.png');
+	display: block;
+	-webkit-filter: blur(.5rem);
+	filter: blur(.5rem);
+	opacity: .24;
+}
+
+.single-media{
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	z-index: 2;
+	max-width: 100%;
+	height: 100%;
+	display: inline-block;
+	box-shadow: 0 2px 12px 2px rgba(31,59,69,.24);
+	border-radius: .125rem;
+	img{
+		width:100%;
+	}
+}
+
+.section__headline{
+	width:100%;
+	margin:0;
+}
+
+.section__title{
+	font-size: 1.75em;
+}
+
+.section__introduction{
+	margin-bottom: 4em;
+	p{
+		font-size: 0.75em;
+		margin: 0;
+	}
+}
+
+.tester{
+	position:absolute;
+}
+
+.tester-container{
+	height: 400px;
+	width:100%;
+}
+
+.tester2{
+	width: 100%;
+}
+
+
+/**
+ * Latest Imagery
+ */
+
+.latest-imagery__cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+		
+.latest-imagery__card {
+		margin: 1rem;
+    width: 312px;
+    height: 400px;
+    transition: opacity 0.3s;
+    &:hover{
+    	opacity: 0.6;
+    };
+}
+
+.panel{
+		box-shadow: 0 3px 0 0 rgba(31,59,69,.08),0 0 0 1px rgba(31,59,69,.12);
+}
+
+.latest-imagery-container{
+		text-align:center;
+}
+
+.latest-imagery__cards{
+		text-align: left;
+	  list-style: none;
+	  margin-bottom: 0;
+}
+
+
+.latest-imagery__image{
+		position: relative;
+		height: 312px;
+		img{
+			position:absolute;
+			margin: 1rem;
+			max-height: 280px;
+			max-width: 280px;
+			-webkit-filter: none;
+			opacity: 1;
+			filter: none;
+		}
+}
+
+.latest-imagery-button{
+		text-align: center;
+		width:100%;
+		clear: both;
+		padding: 0em 0 4em 0;
+}
+
+
+/**
+ * OAM Tools CSS
+ */
+
+.oam-tools-container{
+		clear:both;
+		border-bottom: 1px solid rgb(49, 75, 84);
+}
+
+.section__inverse{
+		background-color: rgb(49, 75, 84);
+		color: #eee;
+		position: absolute;
+		text-align: center;
+		left: 0;
+		width: 100%;
+		height: 6rem;
+		clear:both;
+		h2{
+			margin-top: 2rem;
+		}
+}
+
+.oam-tool__slide{
+	padding-top:5rem;
+	width: 100%;
+}
+
+.flex-slider{
+	ul{
+	list-style: none;
+	}
+}
+
+.slide{
+	margin: 0;
+	padding: 0;
+}
+
+.oam__tools-bottom-border{
+	border-bottom: 1px solid rgba(24, 59, 69, 0.12);
+}
+
+.left-side{
+	width: 50%; 	
+	height: 500px; 
+	float: left;
+	background-image: url("/assets/graphics/meta/example.png");
+}
+
+.right-side{
+	width: 50%; 
+	height: 500px; 
+	float: right;
+	padding: 2rem;
+	border-left: 1px solid rgba(24, 59, 69, 0.12);
+}
+
+
+.about__body{
+	margin-bottom: 4rem;
+	text-align: center;
+}
