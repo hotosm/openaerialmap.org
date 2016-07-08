@@ -105,8 +105,11 @@
 		margin: 1rem;
     width: 312px;
     height: 400px;
-    transition: opacity 0.3s;
+    transition: all 0.3s;
+    &:focus{
+    }
     &:hover{
+			padding-top: 1px;
     	opacity: 0.6;
     };
 }
@@ -267,4 +270,48 @@
 		 @include center($max_width: 720px);
 		}
 	}
+}
+
+.section__title--stats{
+
+}
+
+.oam__stats{
+
+}
+
+.section__inverse--stats{
+		background-color: rgb(49, 75, 84);
+		color: #eee;
+		text-align: center;
+		left: 0;
+		width: 100%;
+		clear:both;
+		padding: 2rem 0;
+		margin-bottom: 3rem;
+		h2{
+			margin: 2rem 1rem;
+		}
+}
+
+.bottom-fix{
+	margin-bottom: 0;
+}
+
+
+.stats__card{
+	display: inline-block;
+	margin: 1rem 8%;
+
+}
+
+.stats__card--amount{
+	font-size: 2em;
+}
+
+.stats__inbetween{
+	display: inline-block;
+	vertical-align: top;
+	padding-top:40px;
+	opacity: 0.4;
 }
