@@ -22,15 +22,13 @@ function updateHero () {
 }
 
 // Update the containers for the most recent imagery
-function updateLatest () {
-  const url = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3'
-  $.getJSON(url, function (data) {
-    console.log('!!!!!\nThe Data:');
-    console.log(data);
+const updateLatest = () => {
+  const url = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3';
+  $.getJSON(url, (data) => {
     const latestImagery = data.results;
     console.log(latestImagery);
   });
-}
+};
 
 // Add Flexslider to Projects Section
 function createSlider () {
