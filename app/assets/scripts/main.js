@@ -63,7 +63,7 @@ const updateLatest = () => {
 };
 
 // Add Flexslider to Projects Section
-function createSlider () {
+const createSlider = () => {
   $('.flex-slider').flexslider({
     animation: 'slide',
     directionNav: true,
@@ -72,7 +72,7 @@ function createSlider () {
   // $('.flex-next').prependTo('.HOT-Nav-Projects');
   // $('.flex-control-nav').prependTo('.HOT-Nav-Projects');
   // $('.flex-prev').prependTo('.HOT-Nav-Projects');
-}
+};
 
 updateHero();
 updateLatest();
