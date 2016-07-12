@@ -1,6 +1,7 @@
 'use strict';
 import config from './config';
 import OAM from 'oam-design-system';
+import dateFormat from 'dateformat';
 import $ from 'jquery';
 window.$ = $;
 
@@ -23,10 +24,19 @@ function updateHero () {
 
 // Update the containers for the most recent imagery
 const updateLatest = () => {
-  const url = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3';
-  $.getJSON(url, (data) => {
-    const latestImagery = data.results;
-    console.log(latestImagery);
+  // Fetch metadata for the three most recent images, in descending order
+  const catalogueUrl = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3';
+  $.getJSON(catalogueUrl, (data) => {
+    data.results.forEach((imgData, i) => {
+      const targetDiv = $(`#image-${i + 1}`);
+      // Update the thumbnail, image platform, and acquisition date metadata
+      $('.latest-imagery__image', targetDiv).prepend(
+        $('<img>', {alt: 'Recent Imagery', src: imgData.properties.thumbnail}));
+      $('.uploaded', targetDiv).text(
+        dateFormat(imgData.acquisition_start, 'mmmm dS, yyyy'));
+      $('.source', targetDiv).text(imgData.platform);
+      $('.loading', targetDiv).removeClass('revealed');
+    });
   });
 };
 

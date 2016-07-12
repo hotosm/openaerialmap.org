@@ -329,13 +329,13 @@
 	margin: -20% 0 0 -50%;
   opacity: 0;
   visibility: hidden;
-  @include transform(scale(0));
+  @include transform(fade(0));
   @include transition(all 0.24s ease 0s);
 
   &.revealed {
     opacity: 1;
     visibility: visible;
-    @include transform(scale(1));
+    @include fade(scale(1));
   }
 
   &:before {

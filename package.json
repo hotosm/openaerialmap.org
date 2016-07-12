@@ -76,6 +76,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "dateformat": "^1.0.12",
     "jquery": "^3.1.0",
     "lodash.defaultsdeep": "^4.3.5",
     "oam-design-system": "git+https://github.com/hotosm/oam-design-system.git#v0.2.1-beta"
