@@ -2,7 +2,7 @@
 import config from './config';
 import OAM from 'oam-design-system';
 import $ from 'jquery'; window.$ = $;
-import dateFormat from 'dateformat';
+import moment from 'moment';
 import centroid from 'turf-centroid';
 import tilebelt from 'tilebelt';
 
@@ -52,7 +52,7 @@ const updateLatest = () => {
       $('.latest-imagery__image', targetEl).prepend(
         $('<img>', {alt: 'Recent Imagery', src: imgData.properties.thumbnail}));
       $('.uploaded', targetEl).text(
-        dateFormat(imgData.acquisition_start, 'mmmm dS, yyyy'));
+        moment(imgData.acquisition_start.slice(0, -1)).format('MMMM Do YYYY'));
       $('.source', targetEl).text(imgData.platform);
       // Update link by generating an OAM Browser URL to the image
       targetEl.attr('href', constructUrl(imgData));
@@ -67,14 +67,14 @@ function createSlider () {
   $('.flex-slider').flexslider({
     animation: 'slide',
     directionNav: true,
-    slideshowSpeed: 6000000,
+    slideshowSpeed: 6000000
   });
   // $('.flex-next').prependTo('.HOT-Nav-Projects');
   // $('.flex-control-nav').prependTo('.HOT-Nav-Projects');
   // $('.flex-prev').prependTo('.HOT-Nav-Projects');
-};
+}
 
 updateHero();
 updateLatest();
 
-console.log("waffles!")
+console.log('waffles!');
