@@ -100,7 +100,7 @@
     overflow: hidden;
 		height: 440px;
 }
-		
+
 .latest-imagery__card {
 		margin: 1rem;
     width: 312px;
@@ -206,8 +206,8 @@
 }
 
 .left-side{
-	width: 50%; 	
-	height: 500px; 
+	width: 50%;
+	height: 500px;
 	float: left;
 	background-image: url("/assets/graphics/meta/example2.png");
 	background-size: cover;
@@ -227,7 +227,7 @@
 .right-side{
 	width: 50%;
 	max-width: 450px;
-	height: 500px; 
+	height: 500px;
 	float: left;
 	padding: 2rem 3rem;
 	border-left: 1px solid rgba(24, 59, 69, 0.12);
@@ -315,3 +315,45 @@
 	padding-top:40px;
 	opacity: 0.4;
 }
+
+// start loading spinner animation style
+.loading {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  z-index: 9980;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+	margin: -20% 0 0 -50%;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(scale(0));
+  @include transition(all 0.24s ease 0s);
+
+  &.revealed {
+    opacity: 1;
+    visibility: visible;
+    @include transform(scale(1));
+  }
+
+  &:before {
+    display: block;
+    @extend .icon-spinner;
+		color: rgba(#1f3b45, 0.8);
+    font-size: 8rem;
+		font-weight: 500;
+    width: 8rem;
+    height: 8rem;
+    line-height: 1;
+    margin: 0 auto 0.5rem auto;
+    @include animation(spin-c 1s linear 0s infinite);
+  }
+}
+
+@include keyframes(spin-c) {
+  from { @include transform(rotate(0deg)); }
+    to { @include transform(rotate(360deg)); }
+}
+// end loading spinner animation style
