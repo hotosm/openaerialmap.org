@@ -148,6 +148,9 @@
 		margin-bottom: 0.125rem;
 		color: rgba(24, 59, 69, 1);
 	}
+	.source {
+		text-transform: capitalize;
+	}
 }
 
 .latest-imagery-button{
@@ -316,7 +319,11 @@
 	opacity: 0.4;
 }
 
-// start loading spinner animation style
+
+/**
+ * Loading spinner
+ */
+
 .loading {
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -335,7 +342,7 @@
   &.revealed {
     opacity: 1;
     visibility: visible;
-    @include fade(scale(1));
+    @include transform(fade(1));
   }
 
   &:before {
@@ -356,4 +363,3 @@
   from { @include transform(rotate(0deg)); }
     to { @include transform(rotate(360deg)); }
 }
-// end loading spinner animation style
