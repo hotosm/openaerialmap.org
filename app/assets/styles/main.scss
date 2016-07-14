@@ -20,15 +20,21 @@
 @import "jeet/jeet";
 @import "reset";
 
+/**
+ * OAM font icon library
+ */
+
+@import "icons";
 
 /**
  * OpenAerialMap Design System
  */
- 
+
 @import "oam-design-system";
 
 /**
  * Custom CSS
  */
+
 @import "structure";
 @import "landing-page-styles";
