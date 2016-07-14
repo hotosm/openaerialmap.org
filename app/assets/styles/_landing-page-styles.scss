@@ -18,12 +18,16 @@
 }
 
 .section__header{
-	background-image: url("/assets/graphics/meta/example.png");
+	background-image: url("/assets/graphics/meta/oam-hero.png");
 	&:before{
 		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
 		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
 		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
 	}
+}
+
+.section__header--about{
+	background-image: url("/assets/graphics/meta/oam-about.jpg");
 }
 
 .blur-media{
@@ -58,10 +62,16 @@
 .section__headline{
 	width:100%;
 	margin:0;
+	margin-bottom:6.5rem;
 }
 
 .section__title{
 	font-size: 1.75em;
+}
+
+.about__title{
+	font-size: 1.75em;
+	margin: 0;
 }
 
 .section__introduction{
@@ -70,6 +80,10 @@
 		font-size: 0.75em;
 		margin: 0;
 	}
+}
+
+.about__headline{
+	margin: 0;
 }
 
 .tester{
@@ -209,7 +223,7 @@
 	width: 50%; 	
 	height: 500px; 
 	float: left;
-	background-image: url("/assets/graphics/meta/example2.png");
+	background-image: url("/assets/graphics/meta/oam_tools_browser.png");
 	background-size: cover;
   @include media(medium-down) {
     width: 100%;
@@ -241,12 +255,23 @@
 
 
 .about__body{
-	margin-bottom: 4rem;
-	text-align: center;
-}
-
-.section__headline{
-	margin-bottom:7.5rem;
+	text-align: left;
+	margin: 0px 16px 4rem 16px;
+	p{
+    width: auto;
+		max-width: 550px;
+		@include media(small-up) {
+			width: 80%;
+			margin: 0 auto 1rem auto;
+  	}
+	}
+	h2{
+		padding: 0 0 1em 0;
+		margin-top: 2em;
+		@include media(small-up) {
+			text-align: center;
+		}
+	}
 }
 
 .community-container{
@@ -296,22 +321,43 @@
 
 .bottom-fix{
 	margin-bottom: 0;
+	padding: 6.5em 0 0 0;
 }
 
 
 .stats__card{
 	display: inline-block;
 	margin: 1rem 8%;
-
+	width: 150px;
 }
 
 .stats__card--amount{
 	font-size: 2em;
+	letter-spacing: -1px;
 }
 
-.stats__inbetween{
-	display: inline-block;
-	vertical-align: top;
-	padding-top:40px;
-	opacity: 0.4;
+.stats__card--title{
+	letter-spacing: 1px;
+	opacity: 0.7;
+	line-height: 18px;
+}
+
+.float-left{
+	float: left;
+	width: 100%;
+	padding-bottom: 2.2em;
+	@include media(small-up) {
+		width: auto;
+	}
+}
+
+.float-right{
+	float: left;
+	width: 100%;
+	padding-bottom: 2.2em;
+
+	@include media(small-up) {
+		width: auto;
+		float: right;
+	}
 }
