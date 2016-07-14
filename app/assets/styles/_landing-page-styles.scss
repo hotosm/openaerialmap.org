@@ -11,6 +11,9 @@
 .community__text{
 	text-align: center;
 	width: 100%;
+	h2{
+		padding-top: 2rem;
+	}
 }
 
 .hero-container{
@@ -213,10 +216,6 @@
 	padding: 0;
 }
 
-.community-container{
-	margin-bottom: 10rem;
-}
-
 .oam__tools-bottom-border{
 	border-bottom: 1px solid rgba(24, 59, 69, 0.4);
 	margin-bottom: 0rem;
@@ -279,9 +278,8 @@
 
 .community-container{
 	clear: both;
-	background-image: url("");
 	background-size: cover;
-	padding: 4rem 0 5rem 0;
+	padding: 0 0 0 0;
 }
 
 .button--primary__community{
@@ -293,10 +291,9 @@
 }
 
 .community__text{
-	.inner{
-		p{
-		 @include center($max_width: 720px);
-		}
+	margin-bottom:6em;
+	p{
+	 @include center($max_width: 720px);
 	}
 }
 
@@ -305,7 +302,6 @@
 }
 
 .oam__stats{
-
 }
 
 .section__inverse--stats{
@@ -365,6 +361,10 @@
 	}
 }
 
+.section__body{
+	margin-bottom: 0;
+}
+
 /**
  * Loading spinner
  */
@@ -394,12 +394,12 @@
     display: block;
     @extend .icon-spinner;
 		color: rgba(#1f3b45, 0.8);
-    font-size: 8rem;
+    font-size: 2rem;
 		font-weight: 500;
-    width: 8rem;
-    height: 8rem;
+    width: 2rem;
+    height: 2rem;
     line-height: 1;
-    margin: 0 auto 0.5rem auto;
+    margin: 2.5rem auto 0.5rem auto;
     @include animation(spin-c 1s linear 0s infinite);
   }
 }
