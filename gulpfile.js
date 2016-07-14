@@ -201,8 +201,8 @@ gulp.task('styles', function () {
 });
 
 gulp.task('html', ['styles'], function () {
-  return gulp.src('app/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+  return gulp.src('app/**/*.html')
+    .pipe($.useref({base: '.', searchPath: ['.tmp', 'app/**/']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.csso()))
     .pipe($.if(/\.(css|js)$/, rev()))
