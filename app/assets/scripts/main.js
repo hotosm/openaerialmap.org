@@ -1,15 +1,10 @@
 'use strict';
 import config from './config';
 import OAM from 'oam-design-system';
-import $ from 'jquery'; window.$ = $;
+import $ from 'jquery';
 import moment from 'moment';
 import centroid from 'turf-centroid';
 import tilebelt from 'tilebelt';
-
-OAM.hello();
-
-console.log.apply(console, config.consoleMessage);
-console.log('Environment', config.environment);
 
 // Header Interactivity
 document.querySelector('[data-hook="global-menu:trigger"]').addEventListener('click', function (e) {
@@ -18,10 +13,6 @@ document.querySelector('[data-hook="global-menu:trigger"]').addEventListener('cl
 
   document.querySelector('[data-hook="global-menu:wrapper"]').classList.toggle('menu-wrapper--open');
 }, false);
-
-// Grab most recent imagery for the hero image container, if we choose to do that.
-function updateHero () {
-}
 
 // Use image metadata to construct OAM Browser URL describing the map view,
 // associated grid tile, and image id
@@ -62,19 +53,6 @@ const updateLatest = () => {
   });
 };
 
-// Add Flexslider to Projects Section
-const createSlider = () => {
-  $('.flex-slider').flexslider({
-    animation: 'slide',
-    directionNav: true,
-    slideshowSpeed: 6000000
-  });
-  // $('.flex-next').prependTo('.HOT-Nav-Projects');
-  // $('.flex-control-nav').prependTo('.HOT-Nav-Projects');
-  // $('.flex-prev').prependTo('.HOT-Nav-Projects');
-};
-
-updateHero();
+// Run functions
+OAM.hello();
 updateLatest();
-
-console.log('waffles!');
