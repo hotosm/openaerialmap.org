@@ -1,5 +1,4 @@
 'use strict';
-import config from './config';
 import OAM from 'oam-design-system';
 import $ from 'jquery';
 import moment from 'moment';
