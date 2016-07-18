@@ -1,64 +1,19 @@
-/* WIP - This will be cleaned up better following initial development */
-
-.launcher__item{
-	margin-top:1em;
-	figure{
-	width:100%;
-	height:200px;
-	}
-}
-
-.community__text{
-	text-align: center;
-	width: 100%;
-	h2{
-		padding-top: 2rem;
-	}
-}
+/**
+ * Hero-image
+ */
 
 .hero-container{
 	background: red;
 }
 
-.section__header{
+.hero__header{
 	background-image: url("/assets/graphics/meta/oam-hero.png");
+	margin-bottom: 0;
+	padding: 6.5em 0 0 0;
 	&:before{
 		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
 		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
 		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
-	}
-}
-
-.section__header--about{
-	background-image: url("/assets/graphics/meta/oam-about.jpg");
-}
-
-.blur-media{
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-  background-image: url('http://hotosm-oam.s3.amazonaws.com/uploads/2016-05-16/573a17d4cd0663bb003c32b6/scene/0/scene-0-image-0-0B5OqSBHBRDanMk42OGx6TE9BZlk.thumb.png');
-	display: block;
-	-webkit-filter: blur(.5rem);
-	filter: blur(.5rem);
-	opacity: .24;
-}
-
-.single-media{
-	position: relative;
-	text-align: center;
-	overflow: hidden;
-	z-index: 2;
-	max-width: 100%;
-	height: 100%;
-	display: inline-block;
-	box-shadow: 0 2px 12px 2px rgba(31,59,69,.24);
-	border-radius: .125rem;
-	img{
-		width:100%;
 	}
 }
 
@@ -72,11 +27,6 @@
 	font-size: 1.75em;
 }
 
-.about__title{
-	font-size: 1.75em;
-	margin: 0;
-}
-
 .section__introduction{
 	margin-bottom: 3rem;
 	p{
@@ -85,28 +35,51 @@
 	}
 }
 
-.about__headline{
-	margin: 0;
+/**
+ * Stats section
+ */
+.section__inverse--stats{
+		background-color: rgb(49, 75, 84);
+		color: #eee;
+		text-align: center;
+		left: 0;
+		width: 100%;
+		clear:both;
+		padding: 2rem 0;
+		margin-bottom: 3rem;
+		h2{
+			margin: 2rem 1rem;
+		}
 }
 
-.tester{
-	position:absolute;
+.stats__card{
+	display: block;
+	margin: 1rem auto;
+	width: 150px;
+  @include media(medium-up) {
+  	display: inline-block;
+  	margin: 1rem 4%;
+  }
+  @include media(large-up){
+  	margin: 1rem 8%;
+  }
 }
 
-.tester-container{
-	height: 400px;
-	width:100%;
+.stats__card--amount{
+	font-size: 2em;
+	letter-spacing: -1px;
 }
 
-.tester2{
-	width: 100%;
+.stats__card--title{
+	letter-spacing: 1px;
+	opacity: 0.7;
+	line-height: 18px;
 }
 
 
 /**
  * Latest Imagery
  */
-
 .latest-imagery__cards {
     display:flex;
     flex-direction: row;
@@ -179,7 +152,7 @@
 
 
 /**
- * OAM Tools CSS
+ * OAM Tools CSS Slideshow
  */
 
 .oam-tools-container{
@@ -221,7 +194,7 @@
 	margin-bottom: 0rem;
 }
 
-.left-side{
+.ot--left-side{
 	width: 50%;
 	height: 500px;
 	float: left;
@@ -233,28 +206,90 @@
   }
 }
 
-.left-side-cover{
+.ot--left-side-bgimage{
 	height: 100%;
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 	background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 	background-image: linear-gradient(rgba(255, 255, 255, 0.7),  rgba(255, 255, 255, 0.1));
 }
 
-.right-side{
+.ot--right-side{
 	width: 50%;
-	max-width: 450px;
+	max-width: 500px;
 	height: 500px;
 	float: left;
-	padding: 2rem 3rem;
+	padding: 0rem 5rem;
 	border-left: 1px solid rgba(24, 59, 69, 0.12);
   @include media(medium-down) {
     width: 100%;
-    max-width: 600px;
+    max-width: 620px;
     padding: 2rem 3rem 4rem;
     height: auto;
   }
 }
 
+.tool-description{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  @include media(medium-down) {
+	  position: relative;
+	  top: 0;
+	  transform: initial;
+	}
+}
+
+/**
+ * Contribute Section
+ */
+.community__text{
+	text-align: center;
+	width: 100%;
+	margin-bottom: 6em;
+	p {
+		padding: 0 16px;	
+		text-align: left;				
+		@include media(small-up){
+			@include center($max_width: 720px);
+			padding: 0 16px;	
+		}
+	}
+	h2{
+		padding: 2rem 16px 0 16px;
+		text-align: left;
+		@include media(small-up){
+		text-align: center;
+		padding: 0 16px;
+		}
+	}
+}
+
+.community-container{
+	clear: both;
+	background-size: cover;
+	padding: 0 0 0 0;
+}
+
+.button--primary__margin-fix{
+	margin-top: 2rem;
+}
+
+/**
+ * About section
+ */
+
+.section__header--about{
+	background-image: url("/assets/graphics/meta/oam-about.jpg");
+}
+
+.about__headline{
+	margin: 0;
+}
+
+.about__title{
+	font-size: 1.75em;
+	margin: 0;
+}
 
 .about__body{
 	text-align: left;
@@ -276,72 +311,11 @@
 	}
 }
 
-.community-container{
-	clear: both;
-	background-size: cover;
-	padding: 0 0 0 0;
-}
+/**
+ * Footer
+ */
 
-.button--primary__community{
-	margin-top: 2rem;
-}
-
-.button--primary__tool{
-	margin-top: 2rem;
-}
-
-.community__text{
-	margin-bottom:6em;
-	p{
-	 @include center($max_width: 720px);
-	}
-}
-
-.section__title--stats{
-
-}
-
-.oam__stats{
-}
-
-.section__inverse--stats{
-		background-color: rgb(49, 75, 84);
-		color: #eee;
-		text-align: center;
-		left: 0;
-		width: 100%;
-		clear:both;
-		padding: 2rem 0;
-		margin-bottom: 3rem;
-		h2{
-			margin: 2rem 1rem;
-		}
-}
-
-.bottom-fix{
-	margin-bottom: 0;
-	padding: 6.5em 0 0 0;
-}
-
-
-.stats__card{
-	display: inline-block;
-	margin: 1rem 8%;
-	width: 150px;
-}
-
-.stats__card--amount{
-	font-size: 2em;
-	letter-spacing: -1px;
-}
-
-.stats__card--title{
-	letter-spacing: 1px;
-	opacity: 0.7;
-	line-height: 18px;
-}
-
-.float-left{
+.footer__float-left{
 	float: left;
 	width: 100%;
 	padding-bottom: 2.2em;
@@ -350,7 +324,7 @@
 	}
 }
 
-.float-right{
+.footer__float-right{
 	float: left;
 	width: 100%;
 	padding-bottom: 2.2em;
