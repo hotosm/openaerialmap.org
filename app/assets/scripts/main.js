@@ -1,27 +1,23 @@
 'use strict';
-import config from './config';
 import OAM from 'oam-design-system';
-import $ from 'jquery'; window.$ = $;
+import $ from 'jquery';
 import moment from 'moment';
 import centroid from 'turf-centroid';
 import tilebelt from 'tilebelt';
 
-OAM.hello();
-
-console.log.apply(console, config.consoleMessage);
-console.log('Environment', config.environment);
-
-// Header Interactivity
-document.querySelector('[data-hook="global-menu:trigger"]').addEventListener('click', function (e) {
-  e.preventDefault();
-  e.target.classList.toggle('button--active');
-
-  document.querySelector('[data-hook="global-menu:wrapper"]').classList.toggle('menu-wrapper--open');
-}, false);
-
-// Grab most recent imagery for the hero image container, if we choose to do that.
-function updateHero () {
-}
+// Set the unqique image, provider, and sensor counts used in the header
+const setHeaderStats = () => {
+  const url = 'https://oam-catalog-test.herokuapp.com/analytics/?limit=1';
+  $.getJSON(url, function (data) {
+    const stats = data.results[0];
+    $('#stats--images')
+      .html(stats.count.toLocaleString()).removeClass('invisible');
+    $('#stats--sensors')
+      .html(stats.sensor_count.toLocaleString()).removeClass('invisible');
+    $('#stats--providers')
+      .html(stats.provider_count.toLocaleString()).removeClass('invisible');
+  });
+};
 
 // Use image metadata to construct OAM Browser URL describing the map view,
 // associated grid tile, and image id
@@ -42,7 +38,7 @@ const constructUrl = (imgData) => {
 };
 
 // Update Latest Imagery containers to describe and link to most recent imagery
-const updateLatest = () => {
+const updateLatestImagery = () => {
   // Fetch metadata for the three most recent images, in descending order
   const catalogueUrl = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3';
   $.getJSON(catalogueUrl, (data) => {
@@ -62,19 +58,14 @@ const updateLatest = () => {
   });
 };
 
-// Add Flexslider to Projects Section
-const createSlider = () => {
-  $('.flex-slider').flexslider({
-    animation: 'slide',
-    directionNav: true,
-    slideshowSpeed: 6000000
-  });
-  // $('.flex-next').prependTo('.HOT-Nav-Projects');
-  // $('.flex-control-nav').prependTo('.HOT-Nav-Projects');
-  // $('.flex-prev').prependTo('.HOT-Nav-Projects');
-};
+// Add header Interactivity
+document.querySelector('[data-hook="global-menu:trigger"]').addEventListener('click', function (e) {
+  e.preventDefault();
+  e.target.classList.toggle('button--active');
+  document.querySelector('[data-hook="global-menu:wrapper"]').classList.toggle('menu-wrapper--open');
+}, false);
 
-updateHero();
-updateLatest();
-
-console.log('waffles!');
+// Run functions
+OAM.hello();
+setHeaderStats();
+updateLatestImagery();
