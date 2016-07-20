@@ -7,7 +7,7 @@ import tilebelt from 'tilebelt';
 
 // Set the unqique image, provider, and sensor counts used in the header
 const setHeaderStats = () => {
-  const url = 'https://oam-catalog-test.herokuapp.com/analytics/?limit=1';
+  const url = 'https://api.openaerialmap.org/analytics/?limit=1';
   $.getJSON(url, function (data) {
     const stats = data.results[0];
     $('#stats--images')
@@ -17,6 +17,18 @@ const setHeaderStats = () => {
     $('#stats--providers')
       .html(stats.provider_count.toLocaleString()).removeClass('invisible');
   });
+};
+
+// Convert Ground Sample Distance to meter resolution
+const gsdToUnit = (gsd) => {
+  let unit = 'm';
+  // If it's less than 1m, convert to cm so it displays more nicely
+  if (gsd < 1) {
+    unit = 'cm';
+    gsd = (gsd * 100).toFixed(2);
+  }
+  if (gsd < 1) gsd = 0;
+  return `${gsd} ${unit}`;
 };
 
 // Use image metadata to construct OAM Browser URL describing the map view,
@@ -47,9 +59,10 @@ const updateLatestImagery = () => {
       // Update the thumbnail, image platform, and acquisition date metadata
       $('.latest-imagery__image', targetEl).prepend(
         $('<img>', {alt: 'Recent Imagery', src: imgData.properties.thumbnail}));
-      $('.uploaded', targetEl).text(
+      $('#date', targetEl).text(
         moment(imgData.acquisition_start.slice(0, -1)).format('MMMM Do YYYY'));
-      $('.source', targetEl).text(imgData.platform);
+      $('#provider', targetEl).text(imgData.provider);
+      $('#resolution', targetEl).text(gsdToUnit(imgData.gsd));
       // Update link by generating an OAM Browser URL to the image
       targetEl.attr('href', constructUrl(imgData));
       // Fade out loading spinner
