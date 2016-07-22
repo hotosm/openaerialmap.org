@@ -1,6 +1,6 @@
 # Openaerialmap.org
 
-Project landing page
+OpenAerialMap landing page: openaerialmap.org
 
 ## Development environment
 To set up the development environment for this website, you'll need to install the following on your system:
