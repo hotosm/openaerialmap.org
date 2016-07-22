@@ -1,26 +1,30 @@
-# openaerialmap.org
+# Openaerialmap.org
 
-Temporary landing page.
+Project landing page
 
 ## Development environment
 To set up the development environment for this website, you'll need to install the following on your system:
 
-- Ruby and [Bundler](http://bundler.io/), preferably through something like [rvm](https://rvm.io/)
+- Node (v4.2.x) & Npm ([nvm](https://github.com/creationix/nvm) usage is advised)
+
+> The versions mentioned are the ones used during development. It could work with newer ones.
 
 After these basic requirements are met, run the following commands in the website's folder:
 ```
-$ bundle install
+$ npm install
 ```
 
 ### Getting started
-To watch the project run:
 
 ```
-$ bundle exec compass watch
+$ npm run serve
 ```
+Compiles the sass files, javascript, and launches the server making the site available at `http://localhost:3000/`
+The system will watch files and execute tasks whenever one of them changes.
+The site will automatically refresh since it is bundled with livereload.
 
-To build the project run:
-
+### Other commands
+Compile the sass files, javascript... Use this instead of ```npm run serve``` if you don't want to watch.
 ```
-$ bundle exec compass compile
+$ npm run build
 ```
