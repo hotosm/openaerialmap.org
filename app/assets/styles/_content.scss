@@ -1,0 +1,455 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+
+/* Exhibit
+   ========================================================================== */
+
+.exhibit {
+  @extend .clearfix;
+  box-shadow: 0 3px 0 0 $base-semi-alpha-color, 0 0 0 1px $base-alpha-color;
+  border-radius: $base-border-radius;
+  background: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  li > & {
+    margin: 0;
+  }
+
+  &--clipped {
+    overflow: hidden;
+  }
+}
+
+.exhibit__content,
+.exhibit__caption,
+.prose .exhibit__caption {
+  padding: $global-spacing;
+  clear: both;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(medium-up) {
+    padding: $global-spacing * 1.5;
+  }
+}
+
+.exhibit__content {
+  &--dark {
+    @extend .antialiased;
+    background: $base-color;
+    color: #fff;
+  }
+}
+
+.exhibit__caption {
+  background: rgba($base-color, 0.04);
+  box-shadow: inset 0 1px 0 $base-alpha-color;
+
+  pre {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  .highlight pre,
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.exhibit__captitle {
+  @extend .heading-alt;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.exhibit__details {
+  dd {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Aside menu
+   ========================================================================== */
+
+.aside-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: $base-font-bold;
+
+  > li {
+    margin: 0 0 ($global-spacing / 2) 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aside-menu-item {
+  display: block;
+  line-height: 2rem;
+  font-size: 1rem;
+  padding: 0 ($global-spacing / 2);
+  border-radius: $base-border-radius;
+  &, &:visited {
+    color: $base-font-color;
+  }
+  &--active {
+    background: rgba($base-color, 0.08);
+  }
+}
+
+
+/* Welcome: launcher
+   ========================================================================== */
+
+.launcher {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.launcher__item-wrapper {
+  @include col(12/12);
+  margin-bottom: $global-spacing * 2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(small-up) {
+    @include col(6/12, $cycle: 2);
+  }
+
+  @include media(medium-up) {
+    @include col(4/12, $uncycle: 2, $cycle: 3);
+  }
+}
+
+.launcher__item {
+  @extend .clearfix;
+  display: block;
+  background: #fff;
+  padding: ($global-spacing * 1.5);
+  box-shadow: 0 4px 0 0 $base-semi-alpha-color, 0 0 0 1px $base-alpha-color;
+  border-radius: $base-border-radius;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.launcher__item-title {
+  @include heading(1.25rem, medium-up); 
+  a, a:visited {
+    display: block;
+    color: inherit;
+  }
+}
+
+.launcher__item-button {
+  @extend .button, .button--base;
+  &:after {
+    @extend %oam-ds-icon-sm-chevron-right;
+  }
+}
+
+
+/* Design System / Brand: logo list
+   ========================================================================== */
+
+.logo-list {
+  @extend .clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include col(12/12);
+    margin-bottom: $global-spacing;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(small-up) {
+      @include col(6/12, $cycle: 2);
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .exhibit {
+    overflow: hidden;
+  }
+}
+
+.logotype {
+  text-align: center;
+  display: block;
+  padding: $global-spacing;
+
+  img {
+    vertical-align: top;
+    height: auto;
+    max-width: 100%;
+  }
+
+  &--v-pos,
+  &--v-neg {
+    img {
+      width: 12rem;
+    }
+  }
+
+  &--h-pos,
+  &--h-neg {
+    img {
+      width: 16rem;
+    }
+  }
+
+  &--v-neg,
+  &--h-neg {
+    background: $base-color; 
+  }
+}
+
+
+/* Brand: typography list
+   ========================================================================== */
+
+.typography-list {
+  @extend .clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include col(4/12);
+    margin-bottom: 0;
+  }
+}
+
+.typecase {
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  display: block;
+
+  &--light { font-weight: $base-font-light; }
+  &--normal { font-weight: $base-font-regular; }
+  &--bold { font-weight: $base-font-bold; }
+
+  @include media(small-up) {
+    font-size: 4rem;
+  }
+}
+
+
+/* Brand: colors list
+   ========================================================================== */
+
+.colors-list {
+  @extend .clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    @include col(12/12);
+    margin-bottom: $global-spacing;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(small-up) {
+      @include col(6/12, $cycle: 2);
+    }
+
+    @include media(medium-up) {
+      @include col(4/12, $uncycle: 2, $cycle: 3);
+
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .exhibit {
+    overflow: hidden;
+  }
+
+  .exhibit__content {
+    padding: 0;
+  }
+}
+
+.swatch {
+  height: 8rem;
+  display: block;
+  box-shadow: inset 0 0 0 4px #fff;
+
+  &--base { background: $base-color; }
+  &--primary { background: $primary-color; }
+  &--secondary { background: $secondary-color; }
+  &--danger { background: $danger-color; }
+  &--warning { background: $warning-color; }
+}
+
+
+/* Iconography: icons list
+   ========================================================================== */
+
+.icons-list {
+  @extend .clearfix;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-spacing: -0.26rem;
+
+  li {
+    display: inline-block;
+    word-spacing: normal;
+    margin: 0 ($global-spacing / 4) ($global-spacing / 4) 0;
+
+    @include media(small-up) {
+      margin: 0 ($global-spacing / 2) ($global-spacing / 2) 0;
+    }
+  }
+
+  .exhibit {
+    cursor: help;
+  }
+
+  .gliph {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    font-size: 1rem;
+    line-height: 1;
+
+    * {
+      vertical-align: top;
+      display: inline-block;
+      line-height: inherit;
+    }
+
+    @include media(small-up) {
+      height: 2rem;
+      width: 2rem;
+      font-size: 2rem;
+    }
+  }
+
+  .exhibit__caption {
+    @extend .visually-hidden;
+  }
+}
+
+*[data-title]:hover {
+  position: relative;
+
+  &:after {
+    @extend .antialiased, .truncated;
+    content: attr(data-title);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    z-index: 1400;
+    transform: translate(-50%, 0);
+    width: auto;
+    max-width: 12rem;
+    padding: 0 ($global-spacing / 2);
+    background: rgba($base-color, 0.8);
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #fff;
+    text-align: center;
+    border-radius: $base-border-radius;
+    font-family: $base-font-family;
+    font-weight: $base-font-regular;
+    font-style: $base-font-style;
+  }
+}
+
+
+/* Design System / Components: misc
+   ========================================================================== */
+
+.button--example-icon:before {
+  @extend %oam-ds-icon-pencil;
+}
+
+.drop__menu-item--example-icon:before {
+  @extend %oam-ds-icon-download;
+}
+
+.exhibit__content {
+  > .button,
+  > .button-group,
+  [data-hook="react:drops"] .button {
+    margin: 0 0.5rem 0.5rem 0;
+  }
+  > .drop {
+    float: left;
+    margin: 0 1.5rem 1.5rem 0;
+    .drop__toggle {
+      float: left;
+    }
+    .drop__content {
+      position: relative;
+      float: left;
+      clear: left;
+    }
+  }
+
+  .panel {
+    position: static;
+  }
+
+  .alert--popover {
+    position: relative;
+    bottom: initial;
+    right: initial;
+    margin-bottom: 1rem;
+  }
+}
+
+.exhibit--modal {
+  overflow: hidden;
+
+  .exhibit__content {
+    padding: 0;
+  }
+
+  .modal {
+    position: relative;
+    z-index: 0;
+  }
+}
+
+
+/* Constructs: flag
+   ========================================================================== */
+
+.exhibit__content .flag-construct__media > img {
+  max-width: 10rem;
+  height: auto;
+}
