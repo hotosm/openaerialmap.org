@@ -1,4 +1,3 @@
-
 <h1 align="center">OAM Landing Page</h1>
 
 <div align="center">
@@ -26,6 +25,18 @@ npm install
 
 ### Getting started
 
+#### Environment Variables
+
+You have to set the locations of the Catalog API and Imagery Browser before starting the web application. In `app/assets/scripts/config/local.js` set the location of the API and port. If these are not set they will take on default values that point to the deployed OAM Catalog. For example:
+
+```
+module.exports = {
+  OAMCatalogAPI: 'http://localhost:4000',
+  OAMBrowserUrl: 'http://localhost:3999'
+};
+```
+
+#### Starting the app
 ```
 npm run serve
 ```

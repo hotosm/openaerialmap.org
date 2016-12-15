@@ -5,6 +5,8 @@ var logo = require('./logo');
  */
 module.exports = {
   environment: 'production',
-  consoleMessage: logo
+  consoleMessage: logo,
+  OAMBrowserUrl: 'https://beta.openaerialmap.org',
+  OAMCatalogApi: 'https://api.openaerialmap.org'
 };
 
