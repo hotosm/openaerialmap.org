@@ -9,7 +9,7 @@ import {OAMCatalogApi, OAMBrowserUrl} from './config.js';
 
 // Set the unqique image, provider, and sensor counts used in the header
 const setHeaderStats = () => {
-  const url =  `${OAMCatalogApi}/analytics/?limit=1`;
+  const url = `${OAMCatalogApi}/analytics/?limit=1`;
   $.getJSON(url, function (data) {
     const stats = data.results[0];
     $('#stats--images')
