@@ -5,9 +5,11 @@ import moment from 'moment';
 import centroid from 'turf-centroid';
 import tilebelt from 'tilebelt';
 
+import {OAMCatalogApi, OAMBrowserUrl} from './config.js';
+
 // Set the unqique image, provider, and sensor counts used in the header
 const setHeaderStats = () => {
-  const url = 'https://api.openaerialmap.org/analytics/?limit=1';
+  const url = `${OAMCatalogApi}/analytics/?limit=1`;
   $.getJSON(url, function (data) {
     const stats = data.results[0];
     $('#stats--images')
@@ -46,13 +48,13 @@ const constructUrl = (imgData) => {
   const quadKey = tilebelt.tileToQuadkey(tile);
   const mapView = center[0] + ',' + center[1] + ',' + previewZoom;
   // Return OAM Browser URL including map view, tile, and image id
-  return `http://beta.openaerialmap.org/#/${mapView}/${quadKey}/${imgData._id}`;
+  return `${OAMBrowserUrl}/#/${mapView}/${quadKey}/${imgData._id}`;
 };
 
 // Update Latest Imagery containers to describe and link to most recent imagery
 const updateLatestImagery = () => {
   // Fetch metadata for the three most recent images, in descending order
-  const catalogueUrl = 'https://api.openaerialmap.org/meta?order_by=acquisition_end&sort=desc&limit=3';
+  const catalogueUrl = `${OAMCatalogApi}/meta?order_by=acquisition_end&sort=desc&limit=3`;
   $.getJSON(catalogueUrl, (data) => {
     data.results.forEach((imgData, i) => {
       const targetEl = $(`#image-${i + 1} a`);
