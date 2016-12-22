@@ -50,3 +50,6 @@ Compile the sass files, javascript and other assets. Use this instead of `npm ru
 ```
 npm run build
 ```
+
+## License
+Openaerialmap is licensed under **BSD 3-Clause License**, see the [LICENSE](LICENSE) file for more details.
