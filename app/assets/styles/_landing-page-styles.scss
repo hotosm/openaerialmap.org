@@ -1,0 +1,403 @@
+/**
+ * Hero-image
+ */
+
+.hero-container{
+	background: red;
+}
+
+.hero__header{
+	background-image: url("/assets/graphics/meta/oam-hero.png");
+	margin-bottom: 0;
+	padding: 6.5em 0 0 0;
+	&:before{
+		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
+	}
+}
+
+.section__headline{
+	width:100%;
+	margin:0;
+	margin-bottom:6.5rem;
+}
+
+.section__title{
+	font-size: 1.75em;
+}
+
+.section__introduction{
+	margin-bottom: 3rem;
+	p{
+		font-size: 0.75em;
+		margin: 0 auto;
+		max-width: 780px;
+	}
+}
+
+/**
+ * Stats section
+ */
+.section__inverse--stats{
+		background-color: rgb(49, 75, 84);
+		color: #eee;
+		text-align: center;
+		left: 0;
+		width: 100%;
+		clear:both;
+		padding: 2rem 0;
+		margin-bottom: 3rem;
+		h2{
+			margin: 2rem 1rem;
+		}
+}
+
+.stats__card{
+	display: block;
+	margin: 1rem auto;
+	width: 150px;
+  @include media(medium-up) {
+  	display: inline-block;
+  	margin: 1rem 4%;
+  }
+  @include media(large-up){
+  	margin: 1rem 8%;
+  }
+}
+
+.stats__card--amount{
+	font-size: 2em;
+	letter-spacing: -1px;
+}
+
+.stats__card--title{
+	letter-spacing: 1px;
+	opacity: 0.7;
+	line-height: 18px;
+}
+
+
+/**
+ * Latest Imagery
+ */
+.latest-imagery__cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: top;
+    align-items: center;
+}
+
+.latest-imagery__card {
+		margin: 1rem;
+    width: 312px;
+    height: 400px;
+    transition: all 0.3s;
+    &:focus{
+    }
+    &:hover{
+			padding-top: 1px;
+    	opacity: 0.6;
+    };
+}
+
+#image-2{
+	display: none;
+	@include media(medium-up){
+		display: block;
+	}
+}
+
+#image-3{
+  display: none;
+  @include media(xlarge-up) {
+		display: block;
+  }
+}
+
+.panel{
+		box-shadow: 0 3px 0 0 rgba(31,59,69,.08),0 0 0 1px rgba(31,59,69,.12);
+}
+
+.latest-imagery-container{
+		text-align:center;
+}
+
+.latest-imagery__cards{
+		text-align: left;
+	  list-style: none;
+	  padding-bottom: 2em;
+}
+
+
+.latest-imagery__image{
+		position: relative;
+		height: 312px;
+		img{
+			position:absolute;
+			margin: 1rem;
+			max-height: 280px;
+			max-width: 280px;
+			-webkit-filter: none;
+			opacity: 1;
+			filter: none;
+		}
+}
+
+.latest-imagery__details{
+	p{
+		font-size: 0.9rem;
+		margin-bottom: 0.125rem;
+		color: rgba(24, 59, 69, 1);
+	}
+	.source {
+		text-transform: capitalize;
+	}
+}
+
+.latest-imagery-button{
+		text-align: center;
+		width:100%;
+		clear: both;
+		padding: 0em 0 4em 0;
+}
+
+
+/**
+ * OAM Tools CSS Slideshow
+ */
+
+.oam-tools-container{
+		clear:both;
+		border-bottom: 1px solid rgb(49, 75, 84);
+}
+
+.section__inverse{
+		background-color: rgb(49, 75, 84);
+		color: #eee;
+		position: absolute;
+		text-align: center;
+		left: 0;
+		width: 100%;
+		clear:both;
+		h2{
+			margin: 2rem 1rem;
+		}
+}
+
+.oam-tool__slide{
+	padding-top:5rem;
+	width: 100%;
+}
+
+.flex-slider{
+	ul{
+	list-style: none;
+	}
+}
+
+.slide{
+	margin: 0;
+	padding: 0;
+}
+
+.oam__tools-bottom-border{
+	border-bottom: 1px solid rgba(24, 59, 69, 0.4);
+	margin-bottom: 0rem;
+}
+
+.ot--left-side{
+	width: 50%;
+	height: 500px;
+	float: left;
+	background-image: url("/assets/graphics/meta/oam_tools_browser.png");
+	background-size: cover;
+  @include media(medium-down) {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.ot--left-side-bgimage{
+	height: 100%;
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+	background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7),  rgba(255, 255, 255, 0.1));
+}
+
+.ot--right-side{
+	width: 50%;
+	max-width: 500px;
+	height: 500px;
+	float: left;
+	padding: 0rem 5rem;
+	border-left: 1px solid rgba(24, 59, 69, 0.12);
+  @include media(medium-down) {
+    width: 100%;
+    max-width: 620px;
+    padding: 2rem 3rem 4rem;
+    height: auto;
+  }
+}
+
+.tool-description{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  @include media(medium-down) {
+	  position: relative;
+	  top: 0;
+	  transform: initial;
+	}
+}
+
+/**
+ * Contribute Section
+ */
+
+.community__container{
+	text-align: center;
+	width: 100%;
+	margin-bottom: 6em;
+}
+
+.community-section{
+	clear: both;
+	background-size: cover;
+	padding: 0 0 0 0;
+}
+
+.community-text{
+	padding: 2rem 3rem 4rem;
+	text-align: center;
+	p {
+		text-align: left;
+		@include media(small-up){
+			@include center($max_width: 780px);
+		}
+	}
+	h2{
+		margin-bottom:2rem;
+		text-align: left;
+		@include media(small-up){
+			text-align: center;
+			padding: 0 16px;
+		}
+	}
+}
+
+.button--primary__margin-fix{
+	margin-top: 2rem;
+}
+
+/**
+ * About section
+ */
+
+.section__body{
+	margin-bottom: 0;
+}
+
+.section__header--about{
+	background-image: url("/assets/graphics/meta/oam-about.jpg");
+}
+
+.about__headline{
+	margin: 0;
+}
+
+.about__title{
+	font-size: 1.75em;
+	margin: 0;
+}
+
+.about__body{
+	text-align: left;
+	margin: 0px 16px 7rem 16px;
+	p{
+    width: auto;
+		max-width: 550px;
+		@include media(small-up) {
+			width: 80%;
+			margin: 0 auto 1rem auto;
+  	}
+	}
+	h2{
+		padding: 0 0 1em 0;
+		margin-top: 2em;
+		@include media(small-up) {
+			text-align: center;
+		}
+	}
+}
+
+/**
+ * Footer
+ */
+
+.footer__float-left{
+	float: left;
+	width: 100%;
+	padding-bottom: 2.2em;
+	@include media(small-up) {
+		width: auto;
+	}
+}
+
+.footer__float-right{
+	float: left;
+	width: 100%;
+	padding-bottom: 2.2em;
+
+	@include media(small-up) {
+		width: auto;
+		float: right;
+	}
+}
+
+
+/**
+ * Loading spinner
+ */
+
+.loading {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  z-index: 9980;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+	margin: -20% 0 0 -50%;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(fade(0));
+  @include transition(all 0.24s ease 0s);
+
+  &.revealed {
+    opacity: 1;
+    visibility: visible;
+    @include transform(fade(1));
+  }
+
+  &:before {
+    display: block;
+    @extend .icon-spinner;
+		color: rgba(#1f3b45, 0.8);
+    font-size: 2rem;
+		font-weight: 500;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+    margin: 2.5rem auto 0.5rem auto;
+    @include animation(spin-c 1s linear 0s infinite);
+  }
+}
+
+@include keyframes(spin-c) {
+  from { @include transform(rotate(0deg)); }
+    to { @include transform(rotate(360deg)); }
+}
