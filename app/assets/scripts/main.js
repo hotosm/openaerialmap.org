@@ -36,7 +36,8 @@ const gsdToUnit = (gsd) => {
 // Use image metadata to construct OAM Browser URL describing the map view,
 // associated grid tile, and image id
 const constructUrl = (imgData) => {
-  const previewZoom = 10;
+  console.log(imgData);
+  const previewZoom = 14;
   // Use turf to calculate the center of the image
   const center = centroid({
     type: 'Feature',
@@ -48,7 +49,7 @@ const constructUrl = (imgData) => {
   const quadKey = tilebelt.tileToQuadkey(tile);
   const mapView = center[0] + ',' + center[1] + ',' + previewZoom;
   // Return OAM Browser URL including map view, tile, and image id
-  return `${OAMBrowserUrl}/#/${mapView}/${quadKey}/${imgData._id}`;
+  return `${OAMBrowserUrl}/#/${mapView}/latest/${imgData._id}`;
 };
 
 // Update Latest Imagery containers to describe and link to most recent imagery
