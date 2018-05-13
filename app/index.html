@@ -48,6 +48,19 @@
 
       <!-- site-header -->
       <header class="page__header" role="banner">
+      <div id="mpopupBox" class="mpopup">
+        <!-- mPopup content -->
+         <div class="mpopup-content">
+           <div class="mpopup-head">
+             <span class="close">×</span>
+            </div>
+           <div class="mpopup-main">
+           <center>
+           <iframe  src="https://www.youtube.com/embed/7xvo5ilpGXU?rel=0?" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"     msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" id="video2"></iframe>
+           </center>
+            </div>
+          </div>
+        </div>
         <div class="inner">
           <div class="page__headline">
             <div class="header-icon">
@@ -104,10 +117,11 @@
               <h1 class="section__title">
                 The open collection of aerial imagery.
               </h1>
-              <div class="section__introduction">
+              <div class="section__introduction" style="color: black;">
                 <p>OpenAerialMap is an open service to provide access to a commons of openly licensed imagery and map layer services. Download or contribute imagery to the growing commons of openly licensed imagery.</p>
               </div>
               <a class="button button--primary button--large" role="button" href="http://map.openaerialmap.org/#/"><span>Start Exploring</span></a>
+              <a class="button button--primary button--large" role="button" href="javascript:void(0);" id="mpopupLink"><span>Watch the Video</span></a>
             </div>
           </div>
         </header>
@@ -285,6 +299,32 @@
     <!-- build:js assets/scripts/bundle.js -->
     <script src="assets/scripts/bundle.js"></script>
     <!-- endbuild -->
+    <script type="text/javascript">
+        
+        var mpopup = document.getElementById('mpopupBox');
 
+        // get the link that opens the mPopup
+        var mpLink = document.getElementById("mpopupLink");
+
+        // get the close action element
+        var close = document.getElementsByClassName("close")[0];
+
+        // open the mPopup once the link is clicked
+        mpLink.onclick = function() {
+          mpopup.style.display = "block";
+        }
+
+        // close the mPopup once close element is clicked
+        close.onclick = function() {
+          mpopup.style.display = "none";
+        }
+
+        // close the mPopup when user clicks outside of the box
+        window.onclick = function(event) {
+          if (event.target == mpopup) {
+            mpopup.style.display = "none";
+          }
+        }
+      </script>
   </body>
 </html>
