@@ -1,50 +1,42 @@
 /* mPopup box style */
 #video2
 {
-	height: -webkit-fill-available;
 	width: 100%;
+	height: 700px;
 }
 
 .mpopup {
 	display: none;
 	position: fixed;
-	overflow-y: auto;
-	margin-bottom: 10%;
 	z-index: 1;
-	padding-top: 10px;
-	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow-y: auto;
 	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0);
-	height: -webkit-fill-available;
-
 }
 .mpopup-content {
 	position: relative;
-	background-color: #fefefe;
-	margin: auto;
 	padding: 0;
-	width: fit-content;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;
 	animation-name: animatetop;
-	animation-duration: 0.4s
-}
-
-.mpopup-head {
-	padding: 2px 16px;
-	background-color: #000000;
-	color: white;
-}
-.mpopup-main {padding: 2px 16px;      background: black;}
-.mpopup-foot {
-	padding: 2px 16px;
-	background-color: #000000;
-	color: #ffffff;
+	animation-duration: 0.4s;
+	.close {
+		position: relative;
+		top: 10px;
+		right: 20px;
+		color: white;
+		float: right;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	.close:hover, .close:focus {
+		color: #999;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }
 
 /* add animation effects */
@@ -58,50 +50,74 @@
 	to {top:0; opacity:1}
 }
 
-/* close button style */
-.close {
-	color: white;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-}
-.close:hover, .close:focus {
-	color: red;
-	text-decoration: none;
-	cursor: pointer;
-}
-
 
 /**
  * Hero-image
  */
 
-.hero-container{
-	background: red;
-}
-
-.hero__header{
-	background-image: url("/assets/graphics/meta/back.gif");
+.hero__header {
+  @extend .antialiased;
+	background: url("/assets/graphics/meta/oam-start.gif") no-repeat center center;
+  background-size: cover;
 	margin-bottom: 0;
 	padding: 6.5em 0 0 0;
-	&:before{
-		background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
-		background-image: -o-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
-		background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.4));
-	}
+  text-shadow: 2px 0 8px rgba($base-color, 0.64);
+
+  &::before {
+    background: url("/assets/graphics/layout/Solid256grid1_2_black.png");
+  }
+
+  &::after {
+    display: none;
+  }
+
+  .section__introduction {
+    font-weight: 400;
+    color: #fff;
+  }
+
+  .button {
+    margin: ($global-spacing / 2) ($global-spacing / 2) ($global-spacing / 2) 0;
+    min-width: 15rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    box-shadow: inset 0 0 0 3px #fff;
+    position: relative;
+    border-radius: $full-border-radius;
+  }
+
+  .playicon {
+    position: absolute;
+    border-left: 8px solid #fff;
+    border-right: 0 dashed transparent;
+    border-top: 6px dashed transparent;
+    border-bottom: 6px dashed transparent;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(calc(-50% + 1px), -50%);
+  }
 }
 
-.section__headline{
+.section__headline {
 	width:100%;
 	margin:0;
 	margin-bottom:6.5rem;
 }
 
-.section__title{
+.section__title {
 	font-size: 1.75em;
 }
 
-.section__introduction{
+.section__introduction {
 	margin-bottom: 3rem;
 	p{
 		font-size: 0.75em;
@@ -113,7 +129,7 @@
 /**
  * Stats section
  */
-.section__inverse--stats{
+.section__inverse--stats {
 		background-color: rgb(49, 75, 84);
 		color: #eee;
 		text-align: center;
@@ -127,7 +143,7 @@
 		}
 }
 
-.stats__card{
+.stats__card {
 	display: block;
 	margin: 1rem auto;
 	width: 150px;
@@ -140,12 +156,12 @@
   }
 }
 
-.stats__card--amount{
+.stats__card--amount {
 	font-size: 2em;
 	letter-spacing: -1px;
 }
 
-.stats__card--title{
+.stats__card--title {
 	letter-spacing: 1px;
 	opacity: 0.7;
 	line-height: 18px;
