@@ -1,17 +1,21 @@
 /* mPopup box style */
-#video2
+#video2 
 {
-	height: -webkit-fill-available;
-	width: 100%;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
+	height:  100%;
+    height:  -moz-available;          
+    height:  -webkit-fill-available;  
+    height:  fill-available;
 }
 
-.mpopup {
+.mpopup {  
 	display: none;
 	position: fixed;
 	overflow-y: auto;
-	margin-bottom: 10%;
 	z-index: 1;
-	padding-top: 10px;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -20,6 +24,7 @@
 	background-color: rgb(0,0,0);
 	background-color: rgba(0,0,0,0);
 	height: -webkit-fill-available;
+	height: -moz-available;
 
 }
 .mpopup-content {
@@ -27,7 +32,6 @@
 	background-color: #fefefe;
 	margin: auto;
 	padding: 0;
-	width: fit-content;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	-webkit-animation-name: animatetop;
 	-webkit-animation-duration: 0.4s;
@@ -36,11 +40,10 @@
 }
 
 .mpopup-head {
-	padding: 2px 16px;
 	background-color: #000000;
 	color: white;
 }
-.mpopup-main {padding: 2px 16px;      background: black;}
+.mpopup-main {background: black;}
 .mpopup-foot {
 	padding: 2px 16px;
 	background-color: #000000;

@@ -53,12 +53,11 @@
          <div class="mpopup-content">
            <div class="mpopup-head">
              <span class="close">×</span>
-             <h2 style="text-align: -webkit-center;"> OpenAerialMap </h2>
-           </div>
+            </div>
            <div class="mpopup-main">
-             <video preload="preload" id="video2"  loop="loop" alt="Loading...">
-              <source src="https://www.dropbox.com/s/jom2vp77b7y4t9u/Andy Day - OAM0001 - MAIN FINAL GRADE WEB.mp4?raw=1" type="video/mp4" >
-              </video> 
+           <center>
+           <iframe  src="https://www.youtube.com/embed/7xvo5ilpGXU?rel=0?" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"     msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" id="video2"></iframe>
+           </center>
             </div>
           </div>
         </div>
@@ -301,18 +300,7 @@
     <script src="assets/scripts/bundle.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
-        var vid = document.getElementById("video2"); 
-        vid.addEventListener('click', function () {
-          if (vid.paused == false) {
-            vid.pause();
-            vid.firstChild.nodeValue = 'Play';
-          } else {
-            vid.play();
-            vid.firstChild.nodeValue = 'Pause';
-          }
-        });
-
-        // get the mPopup
+        
         var mpopup = document.getElementById('mpopupBox');
 
         // get the link that opens the mPopup
@@ -324,25 +312,17 @@
         // open the mPopup once the link is clicked
         mpLink.onclick = function() {
           mpopup.style.display = "block";
-          vid.currentTime = 0;
-
-          vid.play(); 
-
         }
 
         // close the mPopup once close element is clicked
         close.onclick = function() {
           mpopup.style.display = "none";
-          vid.pause(); 
-
         }
 
         // close the mPopup when user clicks outside of the box
         window.onclick = function(event) {
           if (event.target == mpopup) {
             mpopup.style.display = "none";
-            vid.pause(); 
-
           }
         }
       </script>
