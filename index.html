@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenAerialMap</title>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name='description' content='The open collection of aerial imagery' />
+
+    <!-- OG -->
+    <meta property='og:site_name' content='OpenAerialMap' />
+    <meta property='og:title' content='OpenAerialMap' />
+    <meta property='og:url' content='http://openaerialmap.org/' />
+    <meta property='og:type' content='website' />
+    <meta property='og:description' content='The open collection of aerial imagery' />
+    <meta property='og:image' content='assets/graphics/meta/default-meta-image.png' />
+    <!--/ OG -->
+
+    <!-- Twitter -->
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:site' content='@hotosm' />
+    <meta name='twitter:title' content='OpenAerialMap'>
+    <meta name='twitter:description' content='The open collection of aerial imagery' />
+    <meta name='twitter:image:src' content='assets/graphics/meta/default-meta-image.png' />
+    <!--/ Twitter -->
+
+    <link rel='shortcut icon' href='assets/graphics/meta/favicon.ico' type='image/x-icon' />
+    <link rel='apple-touch-icon' href='assets/graphics/meta/apple-touch-icon.png' />
+    <link rel='apple-touch-icon' sizes='57x57' href='assets/graphics/meta/apple-touch-icon-57x57.png' />
+    <link rel='apple-touch-icon' sizes='72x72' href='assets/graphics/meta/apple-touch-icon-72x72.png' />
+    <link rel='apple-touch-icon' sizes='76x76' href='assets/graphics/meta/apple-touch-icon-76x76.png' />
+    <link rel='apple-touch-icon' sizes='114x114' href='assets/graphics/meta/apple-touch-icon-114x114.png' />
+    <link rel='apple-touch-icon' sizes='120x120' href='assets/graphics/meta/apple-touch-icon-120x120.png' />
+    <link rel='apple-touch-icon' sizes='144x144' href='assets/graphics/meta/apple-touch-icon-144x144.png' />
+    <link rel='apple-touch-icon' sizes='152x152' href='assets/graphics/meta/apple-touch-icon-152x152.png' />
+
+    <link rel='author' href='humans.txt' type='text/plain' />
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' type='text/css' />
+
+    <link rel="stylesheet" href="assets/styles/main-cd89be49bf.css">
+  </head>
+
+  <body>
+    <!-- site-canvas -->
+    <div id='site-canvas'>
+
+      <!-- site-header -->
+      <header class="page__header" role="banner">
+      <div id="mpopupBox" class="mpopup">
+        <!-- mPopup content -->
+         <div class="mpopup-content">
+            <span class="close">×</span>
+            <iframe id="video2" src="https://www.youtube.com/embed/7xvo5ilpGXU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="inner">
+          <div class="page__headline">
+            <div class="header-icon">
+              <h1 class="page__title">
+                <a href="#" title="Visit homepage">
+                  <span class="mast-logo mast-logo--h">
+                    <img src="assets/graphics/meta/oam-logo-h-pos.svg" class="mast-logo__image" />
+                    <strong class="mast-logo__text">Open Aerial Map</strong>
+                    <small class="mast-loog__label"></small>
+                  </span>
+                </a>
+              </h1>
+            </div>
+          </div>
+          <nav class="page__prime-nav" role="navigation">
+            <h2 class="toggle-menu">
+              <a href="#global-menu" title="Show/hide menu" data-hook="global-menu:trigger">
+                <span>Browse</span>
+              </a>
+            </h2>
+            <div class="menu-wrapper" data-hook="global-menu:wrapper">
+              <ul class="global-menu" id="global-menu">
+                <li>
+                  <a href="http://map.openaerialmap.org/#/" title="Visit page" class="global-menu-item">
+                    <span>Explore imagery</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://docs.openaerialmap.org/" title="Visit page" class="global-menu-item">
+                    <span>Documentation</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/about" title="Visit page" class="global-menu-item">
+                    <span>About</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://blog.openaerialmap.org/" title="Visit page" class="global-menu-item">
+                    <span>Blog</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!--/ site-header -->
+
+      <section class="section hero-container">
+        <header class="section__header section__header--dark hero__header">
+          <div class="inner">
+            <div class="section__headline">
+              <h1 class="section__title">
+                The open collection of aerial imagery.
+              </h1>
+              <div class="section__introduction">
+                <p>OpenAerialMap is an open service to provide access to a commons of openly licensed imagery and map layer services. Download or contribute imagery to the growing commons of openly licensed imagery.</p>
+              </div>
+              <a class="button button--primary button--large" role="button" href="http://map.openaerialmap.org/#/"><span>Start Exploring</span></a>
+              <a class="button button--primary button--large" role="button" href="javascript:void(0);" id="mpopupLink"><i class="icon"><i class="playicon"></i></i> <span>Watch the Video</span></a>
+            </div>
+          </div>
+        </header>
+      </section>
+
+      <div class ="section__body">
+      <!--/ Latest Imagery -->
+
+      <section class="section oam__stats">
+        <div class="section__inverse--stats">
+          <div class="stats__card">
+            <div class="stats__card--grphx">
+            </div>
+            <div class="stats__card--amount">
+              <strong id ="stats--images" class="invisible">0</strong>
+            </div>
+            <div class="stats__card--title">
+              Images
+            </div>
+          </div>
+          <div class="stats__card">
+            <div class="stats__card--grphx">
+            </div>
+            <div class="stats__card--amount">
+              <strong id="stats--sensors" class="invisible">0</strong>
+            </div>
+            <div class="stats__card--title">
+              Sensors
+            </div>
+          </div>
+          <div class="stats__card">
+            <div class="stats__card--grphx">
+            </div>
+            <div class="stats__card--amount">
+              <strong id="stats--providers" class="invisible">0</strong>
+            </div>
+            <div class="stats__card--title">
+              Providers
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <section class = "section latest-imagery-container inner">
+          <div class="section__main-content prose ">
+            <h2>Latest Imagery</h2>
+            <p>Check out the most recent imagery uploaded.</p>
+            <ul class = "latest-imagery__cards">
+              <li id = "image-1" class = "latest-imagery__card">
+                <a href="http://map.openaerialmap.org/">
+                  <section class="panel">
+                    <div class="latest-imagery__image">
+                      <div class="loading revealed"></div>
+                    </div>
+                    <footer class="panel__footer latest-imagery__details">
+                      <p>Date: <strong id='date'></strong></p>
+                      <p>Provider: <strong id='provider'></strong></p>
+                      <p>Resolution: <strong id='resolution'></strong></p>
+                    </footer>
+                  </section>
+                </a>
+              </li>
+              <li id = "image-2" class = "latest-imagery__card">
+                <a href="http://map.openaerialmap.org/">
+                  <section class="panel">
+                    <div class="latest-imagery__image">
+                      <div class="loading revealed"></div>
+                    </div>
+                    <footer class="panel__footer latest-imagery__details">
+                      <p>Date: <strong id='date'></strong></p>
+                      <p>Provider: <strong id='provider'></strong></p>
+                      <p>Resolution: <strong id='resolution'></strong></p>
+                    </footer>
+                  </section>
+                </a>
+              </li>
+              <li id = "image-3" class = "latest-imagery__card">
+                <a href="http://map.openaerialmap.org/">
+                  <section class="panel">
+                    <div class="latest-imagery__image">
+                      <div class="loading revealed"></div>
+                    </div>
+                    <footer class="panel__footer latest-imagery__details">
+                      <p>Date: <strong id='date'></strong></p>
+                      <p>Provider: <strong id='provider'></strong></p>
+                      <p>Resolution: <strong id='resolution'></strong></p>
+                    </footer>
+                  </section>
+                </a>
+              </li>
+            </ul>
+            <div class="latest-imagery-button">
+              <a class="button button--primary" role="button" href="http://map.openaerialmap.org/#/"><span>View All</span></a>
+            </div>
+          </div>
+        </section>
+      <!--/ OAM Tools  -->
+
+        <section class="oam-tools-container">
+          <div class="section__main-content prose oam__tools-bottom-border">
+            <div class="section__inverse">
+              <h2>Tools made with OpenAerialMap</h2>
+            </div>
+              <div class="oam-tool__slide">
+                <div class="flex-slider">
+                  <ul class="slides" style="padding:0;">
+                    <li style="margin:0;">
+                      <div class="ot--left-side split">
+                        <div class="ot--left-side-bgimage">
+                        </div>
+                      </div>
+                      <div class="ot--right-side split">
+                        <div class='tool-description'>
+                        <h2>OAM Browser</h2>
+                        <p>The OpenAerialMap Browser provides a simple way to browse and obtain imagery.</p>
+                        <p>Users can discover what areas are covered by imagery, and also filter your search to narrow in on the imagery you need.</p>
+                        <a class="button button--primary button--primary__margin-fix" role="button" href="http://map.openaerialmap.org/#/"><span>Learn More</span></a>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!--/ Community  -->
+
+        <section class="section community-section">
+          <div class="community-container">
+            <img src="/assets/graphics/meta/oam-contributing.png" width="100%"></img>
+            <div class="community-text">
+            <h2 class="section__title">Bringing together open UAV efforts</h2>
+            <p>OpenAerialMap creates a place for mappers to store and share their work with the rest of the community. Through this database, everyone has a go to point to start helping out, whether it's drone pilots in areas of crisis, or mappers who want to trace from home.</p>
+            <p>If you're a provider of aerial imagery and would like to get involved, get started contribute.</p>
+            <a class="button button--primary button--primary__margin-fix" role="button" href="http://map.openaerialmap.org/#/"><span>Start Contributing</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!--/ Contact  -->
+
+    <!-- <section class="page__footer" role="contentinfo">
+      <div class="inner">
+        <a href="#">Contact</a> | <a href="#">OAM Browser Status</a>
+      </div>
+    </section> -->
+    <!--/ Footer  -->
+
+    <footer class="page__footer" role="contentinfo">
+      <div class="inner footer__float-left">
+        <a href="mailto:info@openaerialmap.org">Contact</a> | <a href="https://status.openaerialmap.org/">OAM Browser Status</a> | <a href="/legal">Terms</a>
+      </div>
+      <div class="inner footer__float-right">
+        <p>Made with &#9829 by <a href="/about#partners" title="Visit the Humanitarian OpenStreetMap Team website">HOT partners and community</a>.</p>
+      </div>
+    </footer>
+
+    <!--/ google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-88478-51', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script src="assets/scripts/vendor-1c884f0f0e.js"></script>
+    <script src="assets/scripts/bundle-24f4911e52.js"></script>
+    <script type="text/javascript">
+        var vid = document.getElementById("video2");
+        vid.addEventListener('click', function () {
+          if (vid.paused == false) {
+            vid.pause();
+            vid.firstChild.nodeValue = 'Play';
+          } else {
+            vid.play();
+            vid.firstChild.nodeValue = 'Pause';
+          }
+        });
+
+        // get the mPopup
+        var mpopup = document.getElementById('mpopupBox');
+
+        // get the link that opens the mPopup
+        var mpLink = document.getElementById("mpopupLink");
+
+        // get the close action element
+        var close = document.getElementsByClassName("close")[0];
+
+        // open the mPopup once the link is clicked
+        mpLink.onclick = function() {
+          mpopup.style.display = "block";
+          vid.currentTime = 0;
+
+          vid.play();
+
+        }
+
+        // close the mPopup once close element is clicked
+        close.onclick = function() {
+          mpopup.style.display = "none";
+          vid.pause();
+
+        }
+
+        // close the mPopup when user clicks outside of the box
+        window.onclick = function(event) {
+          if (event.target == mpopup) {
+            mpopup.style.display = "none";
+            vid.pause();
+
+          }
+        }
+      </script>
+  </body>
+</html>
