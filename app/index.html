@@ -48,6 +48,13 @@
 
       <!-- site-header -->
       <header class="page__header" role="banner">
+      <div id="mpopupBox" class="mpopup">
+        <!-- mPopup content -->
+         <div class="mpopup-content">
+            <span class="close">×</span>
+            <iframe id="video2" src="https://www.youtube.com/embed/7xvo5ilpGXU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
         <div class="inner">
           <div class="page__headline">
             <div class="header-icon">
@@ -98,7 +105,7 @@
       <!--/ site-header -->
 
       <section class="section hero-container">
-        <header class="section__header hero__header">
+        <header class="section__header section__header--dark hero__header">
           <div class="inner">
             <div class="section__headline">
               <h1 class="section__title">
@@ -108,6 +115,7 @@
                 <p>OpenAerialMap is an open service to provide access to a commons of openly licensed imagery and map layer services. Download or contribute imagery to the growing commons of openly licensed imagery.</p>
               </div>
               <a class="button button--primary button--large" role="button" href="http://map.openaerialmap.org/#/"><span>Start Exploring</span></a>
+              <a class="button button--primary button--large" role="button" href="javascript:void(0);" id="mpopupLink"><i class="icon"><i class="playicon"></i></i> <span>Watch the Video</span></a>
             </div>
           </div>
         </header>
@@ -285,6 +293,51 @@
     <!-- build:js assets/scripts/bundle.js -->
     <script src="assets/scripts/bundle.js"></script>
     <!-- endbuild -->
+    <script type="text/javascript">
+        var vid = document.getElementById("video2");
+        vid.addEventListener('click', function () {
+          if (vid.paused == false) {
+            vid.pause();
+            vid.firstChild.nodeValue = 'Play';
+          } else {
+            vid.play();
+            vid.firstChild.nodeValue = 'Pause';
+          }
+        });
 
+        // get the mPopup
+        var mpopup = document.getElementById('mpopupBox');
+
+        // get the link that opens the mPopup
+        var mpLink = document.getElementById("mpopupLink");
+
+        // get the close action element
+        var close = document.getElementsByClassName("close")[0];
+
+        // open the mPopup once the link is clicked
+        mpLink.onclick = function() {
+          mpopup.style.display = "block";
+          vid.currentTime = 0;
+
+          vid.play();
+
+        }
+
+        // close the mPopup once close element is clicked
+        close.onclick = function() {
+          mpopup.style.display = "none";
+          vid.pause();
+
+        }
+
+        // close the mPopup when user clicks outside of the box
+        window.onclick = function(event) {
+          if (event.target == mpopup) {
+            mpopup.style.display = "none";
+            vid.pause();
+
+          }
+        }
+      </script>
   </body>
 </html>
